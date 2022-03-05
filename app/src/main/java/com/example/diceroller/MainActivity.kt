@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.button)
         //Устанавливаем прослушку нажатия и вызываем метод броска
         rollButton.setOnClickListener { rollDice() }
+
+        //Делает бросок кости при запуске
+        rollDice()
     }
 
     /**
@@ -40,7 +43,9 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
+        //Изменяем картинку после броска
         diceImage.setImageResource(drawableResource)
+        //Изменяем описание ImageView
         diceImage.contentDescription = diceRoll.toString()
     }
 }
