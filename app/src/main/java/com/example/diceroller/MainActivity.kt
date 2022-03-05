@@ -2,7 +2,7 @@ package com.example.diceroller
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
      * Бросок костей и вывод результата на экран
      */
     private fun rollDice() {
+        //Находим ImageView кубиков
+        val diceImage: ImageView = findViewById(R.id.imageView)
         //Создаём первый кубик с шестью сторонами
         val firstDice = Dice(6)
         //Создаём второй кубик с шестью сторонами
@@ -32,12 +34,11 @@ class MainActivity : AppCompatActivity() {
         val firstDiceRoll = firstDice.roll()
         val secondDiceRoll = secondDice.roll()
         //Находим место вывода первого результата
-        val resultTextView1: TextView = findViewById(R.id.textView)
+
         //Находиме место вывода второго результата
-        val resultTextView2: TextView = findViewById(R.id.textView2)
+
         //Выводим результаты на экран
-        resultTextView1.text = firstDiceRoll.toString()
-        resultTextView2.text = secondDiceRoll.toString()
+
     }
 }
 
