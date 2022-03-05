@@ -24,14 +24,20 @@ class MainActivity : AppCompatActivity() {
      * Бросок костей и вывод результата на экран
      */
     private fun rollDice() {
-        //Создаём кубик с шестью сторонами
-        val dice = Dice(6)
-        //Бросаем кубик
-        val diceRoll = dice.roll()
-        //Указываем на место вывода результата
-        val resultTextView: TextView = findViewById(R.id.textView)
-        //Выводим результат на экран
-        resultTextView.text = diceRoll.toString()
+        //Создаём первый кубик с шестью сторонами
+        val firstDice = Dice(6)
+        //Создаём второй кубик с шестью сторонами
+        val secondDice = Dice(6)
+        //Бросаем кубики
+        val firstDiceRoll = firstDice.roll()
+        val secondDiceRoll = secondDice.roll()
+        //Находим место вывода первого результата
+        val resultTextView1: TextView = findViewById(R.id.textView)
+        //Находиме место вывода второго результата
+        val resultTextView2: TextView = findViewById(R.id.textView2)
+        //Выводим результаты на экран
+        resultTextView1.text = firstDiceRoll.toString()
+        resultTextView2.text = secondDiceRoll.toString()
     }
 }
 
